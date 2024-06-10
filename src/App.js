@@ -1,24 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import ViewFriends from './components/ViewFriends';
+import SearchFriends from './components/SearchFriends';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AddFriends from './components/AddFriends';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+   <Routes>
+    <Route path='/' element={<AddFriends/>}/>
+    <Route path='/SearchFriends' element={<SearchFriends/>}/>
+    <Route path='/ViewFriends' element={<ViewFriends/>}/>
+   </Routes>
+   </BrowserRouter>
   );
 }
 
